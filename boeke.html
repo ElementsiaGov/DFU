@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ons Boeke</title>
+    <!-- Add your CSS link here -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" type="image/png" href="https://media.discordapp.net/attachments/1233796295446237227/1233873363601064059/Untitled_design__12_-removebg-preview.png?ex=662ead9e&is=662d5c1e&hm=1b67caa47f952611f6e35b1dbe011cc3bd70e7e9b179f399dad911f9d71f6b38&=&format=webp&quality=lossless&width=250&height=250">
+</head>
+<style>
+           header {
+            background-color: #5d3900f1;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+
+        .search-bar {
+            margin-bottom: 20px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .search-bar input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+            margin-right: 10px;
+            border-radius: 25px;
+        }
+
+        .search-bar button {
+            padding: 10px 20px;
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            border: none;
+            cursor: pointer;
+            border-radius: 25px;
+            transition: 0.2s ease-in-out;
+        }
+        .search-bar button:hover {
+            color: white;
+            background-color: black;
+        }
+
+        .book-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .book {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .book img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .book h3 {
+            margin-top: 0;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .book p {
+            margin-top: 0;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        /* Media query for smaller screens */
+        @media screen and (max-width: 768px) {
+            .search-bar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .search-bar input[type="text"] {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            .search-bar button {
+                width: 100%;
+            }
+        }
+            /* Loading animation styles */
+    .loading-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.8);
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .loading-spinner {
+        border: 6px solid #f3f3f3;
+        border-top: 6px solid #3498db;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+</style>
+<body>
+    <div class="loading-overlay">
+        <div class="loading-spinner"></div>
+    </div>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="#" class="navbar-brand"><h1>DroomFontein Uitgewers</h1></a>
+                <button class="navbar-toggler">
+                    <span class="menu-icon"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse">
+                <ul class="navbar-nav">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Tuisblad</a></li>
+                    <li><a href="#"><i class="fas fa-info-circle"></i> Oor Ons</a></li>
+                    <li><a href="boeke.html"><i class="fas fa-book"></i> Boeke</a></li>
+                    <li><a href="#"><i class="fas fa-newspaper"></i> Nuus</a></li>
+                    <li><a href="#"><i class="fas fa-comments"></i> Resensies</a></li>
+                    <li><a href="#"><i class="fas fa-file-alt"></i> Blog</a></li>
+                    <li><a href="#"><i class="fas fa-cogs"></i> Diens</a></li>
+                    <li><a href="#"><i class="fas fa-question-circle"></i> Veelgestelde Vrae</a></li>
+                    <li><a href="#"><i class="fas fa-envelope"></i> Kontak</a></li>
+                    <li><a href="#"><i class="fas fa-book"></i> Publiseer 'n boek</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header>
+        <h1>Ons Boeke</h1>
+        <br>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search for books...">
+            <button onclick="searchBooks()"><i class="fas fa-search"></i> Search</button>
+            
+        </div>
+    </header>
+
+    <div class="book-list">
+        <section id="gewilde-boeke" class="section">
+            <div class="container">
+                <h2 class="section-title">Gewilde Boeke</h2>
+    
+                        <div class="book-container">
+                            <div class="book">
+                                <img src="https://media.discordapp.net/attachments/1233796295446237227/1233858601840414823/OIG3.png?ex=662e9fde&is=662d4e5e&hm=fb7cb0a05b23ac36272208043f5230b0ae1323320efb266c969310d3ec85d7d8&=&format=webp&quality=lossless&width=280&height=280" alt="Book 1">
+                                <div class="book-info">
+                                    <p class="name">Die Rivier Se Roep</p>
+                                    <p class="author">Author Name 1</p>
+                                    <p class="price">$11.99</p>
+                                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+                                </div>
+                            </div>
+                    <div class="book">
+                        <img src="https://e1a4c9d0d2f9f737c5e1.ucr.io/https://www.create.xyz/api/ai-img?prompt=Book%2520cover%2520of%2520%27Die%2520Sonskyn%2520Weer%27" alt="Book 2">
+                        <div class="book-info">
+                            <p class="name">Die Son sal weer Skyn</p>
+                            <p class="author">Author Name 2</p>
+                            <p class="price">$12.99</p>
+                            <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="book">
+                        <img src="https://e1a4c9d0d2f9f737c5e1.ucr.io/https://www.create.xyz/api/ai-img?prompt=Book%2520cover%2520of%2520%27Oopmond%27" alt="Book 3">
+                        <div class="book-info">
+                            <p class="name">Oopmond</p>
+                            <p class="author">Author Name 3</p>
+                            <p class="price">$9.99</p>
+                            <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="book-container">
+                        <div class="book">
+                            <img src="https://e1a4c9d0d2f9f737c5e1.ucr.io/https://www.create.xyz/api/ai-img?prompt=Book%2520cover%2520of%2520%27Sprokie%2520vir%2520%27n%2520Stadskind%27" alt="Book 1">
+                            <div class="book-info">
+                                <p class="name">Sprokie vir 'n Stadskind</p>
+                                <p class="author">Author Name 1</p>
+                                <p class="price">$8.99</p>
+                                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="book-container">
+                            <div class="book">
+                                <img src="https://media.discordapp.net/attachments/1233796295446237227/1233859805001814186/OIG4.png?ex=662ea0fd&is=662d4f7d&hm=5e007ed6049bb5e2be11ad6b954e1f38eebb378bb5b60667d73703094deb58a0&=&format=webp&quality=lossless&width=280&height=280" alt="Book 1">
+                                <div class="book-info">
+                                    <p class="name">Windvange</p>
+                                    <p class="author">Author Name 1</p>
+                                    <p class="price">$5.99</p>
+                                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+                                </div>
+                            </div>
+                        <div class="book-container">
+                            <div class="book">
+                                <img src="https://media.discordapp.net/attachments/1233796295446237227/1233859144738406500/OIG2.png?ex=662ea060&is=662d4ee0&hm=74eeb0a3e31bd8e884471a601828843dcce4a8f2820a7014272444e81e725245&=&format=webp&quality=lossless&width=280&height=280" alt="Book 1">
+                                <div class="book-info">
+                                    <p class="name">Wolke van Verbeelding</p>
+                                    <p class="author">Author Name 1</p>
+                                    <p class="price">$10.99</p>
+                                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+                                </div>
+                            </div>
+                </div>
+            </div>
+        </section>
+        <!-- This is where the books will be displayed -->
+    </div>
+    <footer class="footer">
+        <div class="container">
+          <div class="footer-content">
+                <div class="social-media">
+                    <a href="#" class="social-link facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link instagram"><i class="fab fa-instagram"></i></a>
+                  </div>
+            <div class="footer-links">
+              <a href="#" class="footer-link">Terms of Service</a>
+              <a href="#" class="footer-link">Privacy Policy</a>
+              <a href="#" class="footer-link">Contact Us</a>
+            </div>
+            <div class="footer-info">
+              <p>&copy; 2024 DroomFontein Uitgewers</p>
+              <p>Email: info@droomfonteinuitgewers.com</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    <!-- JavaScript code -->
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to search books
+    function searchBooks() {
+        const searchInput = document.getElementById('searchInput').value.toLowerCase();
+
+        // Get all books
+        const books = document.querySelectorAll('.book');
+
+        // Loop through each book
+        books.forEach(function(book) {
+            const title = book.querySelector('.name').textContent.toLowerCase();
+            const author = book.querySelector('.author').textContent.toLowerCase();
+
+            // Check if book matches search query
+            if (title.includes(searchInput) || author.includes(searchInput)) {
+                book.style.display = 'block'; // Show book if it matches
+            } else {
+                book.style.display = 'none'; // Hide book if it doesn't match
+            }
+        });
+    }
+
+    // Search button click event
+    document.getElementById('searchInput').addEventListener('keyup', searchBooks);
+});
+
+        document.addEventListener('DOMContentLoaded', function() {
+  const menuBtn = document.querySelector('.navbar-toggler');
+  const menu = document.querySelector('.navbar-collapse');
+
+  menuBtn.addEventListener('click', function() {
+    menu.classList.toggle('show-nav');
+  });
+
+  document.addEventListener('click', function(event) {
+    const isClickInsideMenu = menu.contains(event.target);
+    const isClickInsideMenuBtn = menuBtn.contains(event.target);
+
+    if (!isClickInsideMenu && !isClickInsideMenuBtn) {
+      menu.classList.remove('show-nav');
+    }
+  });
+});
+        // Function to hide loading animation when everything on the page has finished loading
+        window.addEventListener('load', function() {
+            var loadingOverlay = document.querySelector('.loading-overlay');
+            loadingOverlay.style.display = 'none';
+        });
+    </script>
+</body>
+</html>

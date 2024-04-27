@@ -1,26 +1,22 @@
 document.addEventListener('DOMContentLoaded', function() {
-  var menu = document.querySelector('.menu');
-  var hamburgerMenu = document.querySelector('.hamburger-menu');
+  const menuBtn = document.querySelector('.navbar-toggler');
+  const menu = document.querySelector('.navbar-collapse');
 
-  // Open/close the menu when hamburger icon is clicked
-  hamburgerMenu.addEventListener('click', function() {
-      toggleMenu();
+  menuBtn.addEventListener('click', function() {
+    menu.classList.toggle('show-nav');
   });
 
-  // Close the menu when clicking outside of it
   document.addEventListener('click', function(event) {
-      var target = event.target;
-      if (!menu.contains(target) && target !== hamburgerMenu) {
-          menu.style.left = '-250px';
-      }
+    const isClickInsideMenu = menu.contains(event.target);
+    const isClickInsideMenuBtn = menuBtn.contains(event.target);
+
+    if (!isClickInsideMenu && !isClickInsideMenuBtn) {
+      menu.classList.remove('show-nav');
+    }
   });
 });
-
-function toggleMenu() {
-  var menu = document.querySelector('.menu');
-  if (menu.style.left === '-250px') {
-      menu.style.left = '0';
-  } else {
-      menu.style.left = '-250px';
-  }
-}
+        // Function to hide loading animation when everything on the page has finished loading
+        window.addEventListener('load', function() {
+          var loadingOverlay = document.querySelector('.loading-overlay');
+          loadingOverlay.style.display = 'none';
+      });

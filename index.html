@@ -3,29 +3,251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DroomFontein Uitgewers</title>
+    <title>Tuisblad</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" type="image/png" href="https://media.discordapp.net/attachments/1233796295446237227/1233873363601064059/Untitled_design__12_-removebg-preview.png?ex=662ead9e&is=662d5c1e&hm=1b67caa47f952611f6e35b1dbe011cc3bd70e7e9b179f399dad911f9d71f6b38&=&format=webp&quality=lossless&width=250&height=250">
 </head>
+<style>
+       .loading-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.8);
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .loading-spinner {
+        border: 6px solid #f3f3f3;
+        border-top: 6px solid #3498db;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+</style>
 <body>
-    <nav>
+    <div class="loading-overlay">
+        <div class="loading-spinner"></div>
+    </div>
+    <nav class="navbar">
         <div class="container">
-            <div class="hamburger-menu" onclick="toggleMenu()">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
+            <div class="navbar-header">
+                <a href="#" class="navbar-brand"><h1>DroomFontein Uitgewers</h1></a>
+                <button class="navbar-toggler">
+                    <span class="menu-icon"></span>
+                </button>
             </div>
-            <div class="brand">DroomFontein Uitgewers</div>
+            <div class="navbar-collapse">
+                <ul class="navbar-nav">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Tuisblad</a></li>
+                    <li><a href="#"><i class="fas fa-info-circle"></i> Oor Ons</a></li>
+                    <li><a href="boeke.html"><i class="fas fa-book"></i> Boeke</a></li>
+                    <li><a href="#"><i class="fas fa-newspaper"></i> Nuus</a></li>
+                    <li><a href="#"><i class="fas fa-comments"></i> Resensies</a></li>
+                    <li><a href="#"><i class="fas fa-file-alt"></i> Blog</a></li>
+                    <li><a href="#"><i class="fas fa-cogs"></i> Diens</a></li>
+                    <li><a href="#"><i class="fas fa-question-circle"></i> Veelgestelde Vrae</a></li>
+                    <li><a href="#"><i class="fas fa-envelope"></i> Kontak</a></li>
+                    <li><a href="#"><i class="fas fa-book"></i> Publiseer 'n boek</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
-    <div class="menu">
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Books</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </div>
-    <!-- Other content goes here -->
+    
+    <section id="oor-ons" class="section">
+        <div class="container1">
+            
+            <h2 class="section-title">Oor Ons</h2>
+            <div class="section-content">
+                <div style="text-align: center; padding: 20px;">
+                    <img src="https://media.discordapp.net/attachments/1233796295446237227/1233874339489644745/Untitled_design__13_-removebg-preview_1.png?ex=662eae86&is=662d5d06&hm=0ead9c1ba7b0dcb116165c540c179a046033fdd86d49829e7205ae82a1ee10fa&=&format=webp&quality=lossless&width=1000&height=312" style="width: 80%; box-shadow: 0 0 20px rgba(0, 0, 0, 0);">
+                  </div>
+                  
+                  
+                <p style="font-family: Arial, Helvetica, sans-serif;">
+                    Welkom by DroomFontein Uitgewers. Ons is 'n toegewyde span wat passievol is oor die uitgee van unieke en betekenisvolle boeke. Met 'n geskiedenis van meer as 20 jaar in die bedryf, is ons trots daarop om stories te vertel wat mense inspireer, leer en vermaak.
+                </p>
+                <p style="font-family: Arial, Helvetica, sans-serif;">
+                    Ons strewe daarna om 'n brug te bou tussen skrywers en lesers deur die publikasie van hoogs kwalitatiewe boeke in 'n verskeidenheid van genres, insluitend fiksie, nie-fiksie, poësie en kinderboeke.
+                </p>
+                <p style="font-family: Arial, Helvetica, sans-serif;">
+                    Met elke publikasie streef ons daarna om 'n impak te maak en 'n verskil te maak in die lewens van ons lesers. Ons glo daarin om 'n ruimte te skep vir kreatiwiteit, verbeelding en ontdekking deur die krag van woorde.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section id="kyk-rond" class="section">
+        <div class="container">
+            <h2 class="section-title">Kyk Rond</h2>
+            <div class="genre-buttons">
+                <a href="mystery.html" class="genre-button" style="background-image: url('https://th.bing.com/th/id/R.232ecc2c18ff163d2d1dd8c9514dcd3d?rik=HxB%2bgr%2f5%2b%2bqkug&riu=http%3a%2f%2f3.bp.blogspot.com%2f-VdGRZqiNZhw%2fWEhq08Gpc1I%2fAAAAAAAALLA%2fmCZLh5VaUuUthLW8FLEigFJT4oYxZHFaQCK4B%2fs1600%2fthedressmaker_0033.png&ehk=bOlXV04h5dC%2fV4xIzSk4ioA3ayEo0T%2fP83p%2fX12L8aY%3d&risl=&pid=ImgRaw&r=0');">Misterie</a>
+                <a href="romance.html" class="genre-button" style="background-image: url('https://th.bing.com/th/id/OIP.Noiik5navT9c3zvSlnXKXAHaHa?rs=1&pid=ImgDetMain');">Romanse</a>
+                <a href="fantasy.html" class="genre-button" style="background-image: url('https://th.bing.com/th/id/OIP.hF8CKw31Ar2_Io7GpU5Z2AHaEK?rs=1&pid=ImgDetMain');">Fantasie</a>
+                <a href="science-fiction.html" class="genre-button" style="background-image: url('https://images-ext-1.discordapp.net/external/MCUm54PUFm7W-4Xf45cHIP5fhZ-SwQXDZRNucE9Jzu8/%3Frik%3D5shrft4y5UAh0g%26riu%3Dhttp%253a%252f%252fentropymag.org%252fwp-content%252fuploads%252f2014%252f10%252fouter-space-wallpaper-pictures.jpg%26ehk%3DCZYlNcV5m6HukzlGOVFLixP2Z%252bcalucYnvisza9IH1U%253d%26risl%3D%26pid%3DImgRaw%26r%3D0/https/th.bing.com/th/id/R.949655786e97cffaba63f29a40de2d0c?format=webp&width=500&height=312');">Sci-Fi</a>
+                <a href="thriller.html" class="genre-button" style="background-image: url('https://th.bing.com/th/id/OIP.TC01TYzS5UzWOxW73NRFHgHaE8?rs=1&pid=ImgDetMain');">Thriller</a>
+            </div>
+        </div>
+    </section>
+    
+    
+
+    <section id="gewilde-boeke" class="section">
+        <div class="container">
+            <h2 class="section-title">Gewilde Boeke</h2>
+
+                    <div class="book-container">
+                        <div class="book">
+                            <img src="https://media.discordapp.net/attachments/1233796295446237227/1233858601840414823/OIG3.png?ex=662e9fde&is=662d4e5e&hm=fb7cb0a05b23ac36272208043f5230b0ae1323320efb266c969310d3ec85d7d8&=&format=webp&quality=lossless&width=280&height=280" alt="Book 1">
+                            <div class="book-info">
+                                <p class="name">Die Rivier Se Roep</p>
+                                <p class="author">Author Name 1</p>
+                                <p class="price">$11.99</p>
+                                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+                            </div>
+                        </div>
+                <div class="book">
+                    <img src="https://e1a4c9d0d2f9f737c5e1.ucr.io/https://www.create.xyz/api/ai-img?prompt=Book%2520cover%2520of%2520%27Die%2520Sonskyn%2520Weer%27" alt="Book 2">
+                    <div class="book-info">
+                        <p class="name">Die Son sal weer Skyn</p>
+                        <p class="author">Author Name 2</p>
+                        <p class="price">$12.99</p>
+                        <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+                    </div>
+                </div>
+                <div class="book">
+                    <img src="https://e1a4c9d0d2f9f737c5e1.ucr.io/https://www.create.xyz/api/ai-img?prompt=Book%2520cover%2520of%2520%27Oopmond%27" alt="Book 3">
+                    <div class="book-info">
+                        <p class="name">Oopmond</p>
+                        <p class="author">Author Name 3</p>
+                        <p class="price">$9.99</p>
+                        <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+                    </div>
+                </div>
+                <div class="book-container">
+                    <div class="book">
+                        <img src="https://e1a4c9d0d2f9f737c5e1.ucr.io/https://www.create.xyz/api/ai-img?prompt=Book%2520cover%2520of%2520%27Sprokie%2520vir%2520%27n%2520Stadskind%27" alt="Book 1">
+                        <div class="book-info">
+                            <p class="name">Sprokie vir 'n Stadskind</p>
+                            <p class="author">Author Name 1</p>
+                            <p class="price">$8.99</p>
+                            <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="book-container">
+                        <div class="book">
+                            <img src="https://media.discordapp.net/attachments/1233796295446237227/1233859144738406500/OIG2.png?ex=662ea060&is=662d4ee0&hm=74eeb0a3e31bd8e884471a601828843dcce4a8f2820a7014272444e81e725245&=&format=webp&quality=lossless&width=280&height=280" alt="Book 1">
+                            <div class="book-info">
+                                <p class="name">Wolke van Verbeelding</p>
+                                <p class="author">Author Name 1</p>
+                                <p class="price">$10.99</p>
+                                <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="book-container">
+                            <div class="book">
+                                <img src="https://media.discordapp.net/attachments/1233796295446237227/1233859805001814186/OIG4.png?ex=662ea0fd&is=662d4f7d&hm=5e007ed6049bb5e2be11ad6b954e1f38eebb378bb5b60667d73703094deb58a0&=&format=webp&quality=lossless&width=280&height=280" alt="Book 1">
+                                <div class="book-info">
+                                    <p class="name">Windvange</p>
+                                    <p class="author">Author Name 1</p>
+                                    <p class="price">$5.99</p>
+                                    <button class="add-to-cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+                                </div>
+                            </div>
+                <!-- Add more books as needed -->
+            </div>
+        </div>
+    </section>
+<br>
+    <section id="opinie" class="section">
+        <div class="container">
+            <h2 class="section-title">Opinies</h2>
+            <div class="opinions">
+                <div class="opinion-container">
+                    <div class="opinion">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="comment">DroomFontein Uitgewers het my verbeelding aangegryp en my lewe verander met hul pragtige boeke.</p>
+                        <p class="author1">- John Doe</p>
+                    </div>
+                </div>
+                <div class="opinion-container">
+                    <div class="opinion">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="comment">Ek is lief vir die kwaliteit van die boeke wat DroomFontein Uitgewers bied. ❤️</p>
+                        <p class="author1">- Anna van der Merwe</p>
+                    </div>
+                </div>
+                <div class="opinion-container">
+                    <div class="opinion">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <p class="comment">Ek het geniet om die boeke van DroomFontein Uitgewers te lees.</p>
+                        <p class="author1">- Pieter du Plessis</p>
+                    </div>
+                </div>
+                <div class="opinion-container">
+                    <div class="opinion">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <p class="comment">Die boeke van DroomFontein Uitgewers het my geïnspireer en my perspektief verander.</p>
+                        <p class="author1">- Elize Visser</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+          <div class="footer-content">
+                <div class="social-media">
+                    <a href="#" class="social-link facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link instagram"><i class="fab fa-instagram"></i></a>
+                  </div>
+            <div class="footer-links">
+              <a href="#" class="footer-link">Terms of Service</a>
+              <a href="#" class="footer-link">Privacy Policy</a>
+              <a href="#" class="footer-link">Contact Us</a>
+            </div>
+            <div class="footer-info">
+              <p>&copy; 2024 DroomFontein Uitgewers</p>
+              <p>Email: info@droomfonteinuitgewers.com</p>
+            </div>
+          </div>
+        </div>
+      </footer>
     <script src="script.js"></script>
 </body>
 </html>

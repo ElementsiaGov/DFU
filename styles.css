@@ -1,62 +1,393 @@
-body {
+/* Reset CSS */
+* {
   margin: 0;
-  font-family: Arial, sans-serif;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-nav {
-  background-color: #333;
-  color: #fff;
-  padding: 10px 0;
+body {
+  font-family: 'Times New Roman', Times, serif; /* Change font to a more traditional serif font */
+  background-color: #f8f0e3; /* Warm beige background color */
 }
 
 .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-.hamburger-menu {
+.navbar {
+  background-color: #5d3a00; /* Rich brown for navbar */
+  padding: 20px 0; /* Increased padding */
+}
+
+.navbar-header {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-brand {
+  color: #fff;
+  font-size: 1.5rem;
+  text-decoration: none;
+  text-transform: uppercase; /* Uppercase for a more traditional look */
+}
+
+.navbar-toggler {
+  background: none;
+  border: none;
   cursor: pointer;
+  padding: 10px;
 }
 
-.bar {
-  width: 25px;
-  height: 3px;
+.menu-icon {
+  display: block;
+  width: 20px;
+  height: 2px;
   background-color: #fff;
-  margin: 3px 0;
+  position: relative;
 }
 
-.brand {
-  font-size: 1.2em;
-}
-
-.menu {
-  position: fixed;
-  top: 0;
-  left: -250px; /* Initially off-screen */
-  width: 250px;
-  height: 100%;
-  background-color: #333;
-  transition: left 0.3s ease-in-out;
-  z-index: 1;
-}
-
-.menu ul {
-  list-style: none;
-  padding: 0;
-}
-
-.menu ul li {
-  padding: 15px;
-}
-
-.menu ul li a {
+.navbar-nav li a {
   color: #fff;
   text-decoration: none;
-  font-size: 1.1em;
+  font-size: 1.2rem;
+  transition: 0.3s ease-in-out; /* Smooth transition for color change */
+  padding: 10px; /* Increase padding for better spacing */
+  border-radius: 5px; /* Rounded corners */
 }
+
+.navbar-nav li a:hover {
+  background-color: #4a2e00; /* Darker brown for hover effect */
+  border-radius: 35px;
+}
+
+.menu-icon:before,
+.menu-icon:after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  position: absolute;
+  transition: transform 0.2s ease;
+}
+
+.menu-icon:before {
+  top: -6px;
+}
+
+.menu-icon:after {
+  top: 6px;
+}
+
+.navbar-collapse {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Initially hide the menu */
+  width: 250px;
+  height: 100%;
+  background-color: #5d3a00; /* Rich brown for the collapsed menu */
+  padding-top: 60px; /* Space for the navbar header */
+  transition: left 0.3s ease;
+  z-index: 999;
+}
+
+.navbar-nav {
+  list-style: none;
+  padding: 0 20px;
+}
+
+.navbar-nav li {
+  margin-bottom: 20px;
+}
+
+.show-nav {
+  left: 0; /* Show the menu */
+}
+
+h1 {
+  font-size: 1.4rem; /* Decrease font size slightly */
+  font-weight: normal; /* Remove bold */
+}
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 1.2rem; /* Decrease font size further for smaller screens */
+  }
+}
+/* Style for the "Oor Ons" section */
+#oor-ons {
+  padding: 60px 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #5d3a00; /* Rich brown */
+  margin-bottom: 30px;
+}
+
+.section-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: justify;
+  color: #333; /* Text color */
+}
+
+.section-content p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.container1 {
+  padding: 0 20px;
+}
+/* Style for the "Gewilde Boeke" section */
+#gewilde-boeke {
+  padding: 60px 0;
+  background-color: #faecd6;
+}
+
+.book-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.book {
+  margin: 0 20px 40px;
+  text-align: center;
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.book img {
+  width: 300px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  transition: 0.3s ease-in-out;
+}
+.book img:hover {
+  transform: scale(1.05);
+}
+
+.author {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #7a4d1f; /* Text color */
+}
+.name {
+  color: #47001e;
+}
+.add-to-cart-btn {
+  background-color: #5d3a00;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  margin-top: 3px;
+  width: 300px;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #000000;
+  color: white;
+}
+
+.add-to-cart-btn i {
+  margin-right: 5px;
+}
+
+.add-to-cart-btn:hover i {
+  transform: rotate(360deg);
+}
+
+.opinions {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items on the x-axis */
+}
+
+.opinion-container {
+  width: 800px; /* Set max width for each opinion container */
+  margin-bottom: 20px; /* Add margin between opinion containers */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow */
+  transition: box-shadow 0.3s ease, cursor 0.3s ease; /* Add transition for smooth animation */
+  cursor: pointer; /* Set default cursor style */
+  border-radius: 20px;
+}
+
+.opinion-container:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Increase box shadow on hover */
+  cursor: pointer; /* Change cursor style on hover */
+}
+
+.opinion {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for a card-like effect */
+}
+
+.stars {
+  color: #ffc107; /* Yellow color for stars */
+  margin-bottom: 10px;
+}
+
+.comment {
+  margin-bottom: 10px;
+}
+
+.author1 {
+  font-style: italic;
+  color: #888; /* Gray color for author */
+}
+@media only screen and (max-width: 768px) {
+  .opinion-container {
+    width: 90%;
+  }
+}
+#kyk-rond {
+  padding: 60px 0;
+  background-color: #f8f0e3;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #5d3a00; /* Rich brown */
+  margin-bottom: 30px;
+}
+
+.genre-buttons {
+  display: flex;
+  flex-wrap: wrap; /* Allow buttons to wrap to the next line on smaller screens */
+  justify-content: center;
+  gap: 20px;
+}
+
+.genre-button {
+  width: calc(33% - 20px); /* Set initial width for large screens */
+  max-width: 210px; /* Set max-width for smaller screens */
+  height: 90px;
+  background-size: cover;
+  background-position: center;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  align-items: center; /* Align text vertically */
+  justify-content: center; /* Align text horizontally */
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s ease-in-out;
+}
+
+/* Adjust styles for hover effect */
+.genre-button:hover {
+  opacity: 0.9;
+  color: rgba(255, 255, 255, 0.715);
+}
+@media (max-width: 480px) {
+  .genre-buttons {
+    flex-direction: row;
+    flex-wrap: wrap; /* Allow buttons to wrap to the next line */
+    justify-content: space-between; /* Add space between buttons */
+  }
+  
+  .genre-button {
+    width: calc(50% - 10px); /* Adjust width with a smaller margin */
+    margin-bottom: 20px; /* Add margin between buttons */
+  }
+}
+.footer {
+  background-color: #9a8666;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+}
+
+.social-link {
+  color: #fff;
+  font-size: 24px;
+  margin: 0 10px;
+  text-decoration: none;
+  border-radius: 50%; /* Make the icons circular */
+  width: 40px; /* Set width and height to create circular icons */
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.15s ease-in-out;
+}
+
+.social-link:hover {
+  color: #fff; /* Change color on hover */
+  background-color: black;
+}
+
+/* Background colors for social media icons */
+.facebook {
+  background-color: #3b5998; /* Facebook blue */
+}
+
+.twitter {
+  background-color: #1da1f2; /* Twitter blue */
+}
+
+.instagram {
+  background-color: #c32aa3; /* Instagram pink */
+}
+
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-link {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: 0.2s ease-in-out;
+  padding: 10px;
+}
+
+.footer-link:hover {
+  color: #ffffff; /* Change color on hover */
+  background-color: #5d3b05e1; /* Darker brown for hover effect */
+  border-radius: 35px;
+}
+
+.footer-info {
+  text-align: center;
+}
+
+.footer-info p {
+  margin-bottom: 5px;
+}
+
+
+
+
